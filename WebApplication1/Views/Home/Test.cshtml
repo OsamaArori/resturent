@@ -1,0 +1,12 @@
+﻿
+
+<div>
+	
+	@for(int i = 0 ; i < 3 ;i++)
+	{
+		@await Html.PartialAsync("_Authors",Model,new ViewDataDictionary(ViewData){{"index",i}})
+
+	}
+
+</div>
+

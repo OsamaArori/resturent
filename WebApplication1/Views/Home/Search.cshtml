@@ -1,0 +1,72 @@
+﻿@model IEnumerable<WebApplication1.Models.ProductCustomer>
+
+	<head>
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+	</head>
+
+
+
+
+
+	<div class="row">
+		<div class="col-7">
+			<form action="Search" method="post">
+				<label for="startDate">Start Date</label>
+				<input type="date" class="form-control" name="startDate" placeholder="Start Date" />
+				
+				<label for="endDate">End Date</label>
+				<input type="date" class="form-control" name="endDate" placeholder="End Date" />
+				<br />
+				<button type="submit" class="btn btn-warning">Search</button>
+			</form>
+		</div>
+	</div>
+	<br />
+	<br />
+	<div class="row">
+		<div class="col-10">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Customer First Name</th>
+						<th>Customer Last Name</th>
+						<th>Product Name</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th>Date From</th>
+						<th>Date To</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+				   {
+					   <tr>
+						  <td>
+							  @Html.DisplayFor(modelItem => item.Customer.Fname)
+						  </td>
+						  <td>
+							  @Html.DisplayFor(modelItem => item.Customer.Lname)
+						  </td>
+						  <td>
+							  @Html.DisplayFor(modelItem => item.Product.Name)
+						  </td>
+						  <td>
+							  @Html.DisplayFor(modelItem => item.Quantity)
+						  </td>
+						  <td>
+							  @Html.DisplayFor(modelItem => item.Product.Price)
+						  </td>
+						  <td>
+							  @Html.DisplayFor(modelItem => item.DateFrom)
+						  </td>
+						  <td>
+							  @Html.DisplayFor(modelItem => item.DateTo)
+						  </td>
+					   </tr>
+				   }
+				</tbody>
+			</table>
+		</div>
+
+	</div>

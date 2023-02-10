@@ -1,0 +1,26 @@
+﻿@model IEnumerable<WebApplication1.Models.Category>
+<head>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<h1>Customer Dasboard</h1>
+
+
+@foreach (var item in Model)
+{
+	<div class="row">
+		<div class="col-md-8">
+			<div class="row">
+
+				<img src="@Url.Content("~/Images/" + item.ImagePath)" width="200" height="200" />
+
+				<a href="/DashBoard/CatProduct/@item.Id">Click me</a>
+				<a asp-action="CatProduct" asp-route-id="@item.Id" >Click me</a>
+			
+			</div>
+		</div>
+		<div class="col-md">
+
+		</div>
+	</div>
+}

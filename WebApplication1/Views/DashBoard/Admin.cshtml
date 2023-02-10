@@ -1,0 +1,39 @@
+﻿@{
+	 Layout = "~/Views/Shared/UserDashboard.cshtml";
+	 var name = ViewBag.EmployeeName;
+}
+
+@*<h1>Admin Dashboard</h1>
+<h2>@name</h2>*@
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<div class="col-lg-3">
+	<div class="icon inner">
+		<h3><i class="fa fa-user" aria-hidden="true"></i> @ViewData["Ayman"] Users</h3>
+	</div>
+	<div class="icon inner">
+		<h3><i class="fa fa-user" aria-hidden="true"></i> @ViewBag.Sales </h3>
+	</div>
+
+</div>
+
+
+    <table class="table ">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Fname</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in ViewBag.Customer)
+		   {
+			   <tr>
+				<td>@item.Id</td>
+				<td>@item.Fname</td>
+			   </tr>
+		   }
+			
+		</tbody>
+    </table>
